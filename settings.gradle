@@ -1,0 +1,8 @@
+rootProject.name = "Modularisation concept v1"
+include ':app'
+
+include ':feature:profile'
+include ':feature:photo-picker'
+
+include ':core:android-utils'
+include ':core:di'
