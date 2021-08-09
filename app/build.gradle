@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'koin'
-    id 'kotlin-kapt'
 }
 
 android {
@@ -10,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.modularisationconceptv1"
-        minSdkVersion 23
-        targetSdkVersion 30
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
         versionCode 1
         versionName "1.0"
 
