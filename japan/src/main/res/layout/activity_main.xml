@@ -5,4 +5,4 @@
 	android:name="com.example.modularisationconceptv1.RootFragment"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".MainActivity" />
+	tools:context=".JapanActivity" />

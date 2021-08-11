@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.example.modularisationconceptv1">
+	package="com.example.japan">
 
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application
-		android:name=".App"
+		android:name="com.example.japan.JapanApp"
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
@@ -14,7 +14,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/DoterraTheme">
 		<activity
-			android:name=".MainActivity"
+			android:name="com.example.japan.JapanActivity"
 			android:theme="@style/SplashScreenTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

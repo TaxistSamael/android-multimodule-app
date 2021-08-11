@@ -6,3 +6,4 @@ include ':feature:photo-picker'
 
 include ':core:android-utils'
 include ':mexico'
+include ':monolith'

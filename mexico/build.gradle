@@ -1,45 +1,52 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'koin'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion androidSdkVer
 
     defaultConfig {
-        applicationId "com.multimodule.myapplication"
-        minSdkVersion 23
-        targetSdkVersion 30
+        applicationId "com.multimodule.mexico"
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+        languageVersion = "1.5"
+        freeCompilerArgs += ["-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                             "-Xuse-experimental=kotlinx.coroutines.FlowPreview",
+                             "-Xuse-experimental=kotlinx.coroutines.InternalCoroutinesApi",
+                             "-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi",]
     }
 }
 
 dependencies {
+    implementation project(":feature:profile")
+    implementation project(":feature:photo-picker")
+    implementation project(":core:android-utils")
+    implementation project(':monolith')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVer"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation rootProject.ext.kotlin
+    implementation rootProject.ext.appCompat
+    implementation rootProject.ext.fragment
+    implementation rootProject.ext.material
+
+    implementation rootProject.ext.coroutinesCore
+    implementation rootProject.ext.coroutinesAndroid
+
+    implementation rootProject.ext.koinScope
+    implementation rootProject.ext.koinAndroid
+    implementation rootProject.ext.koinViewModel
+
+    implementation rootProject.ext.cicerone
 }
