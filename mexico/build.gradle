@@ -31,22 +31,10 @@ android {
 }
 
 dependencies {
-    implementation project(":feature:profile")
-    implementation project(":feature:photo-picker")
-    implementation project(":core:android-utils")
     implementation project(':monolith')
 
     implementation rootProject.ext.kotlin
-    implementation rootProject.ext.appCompat
-    implementation rootProject.ext.fragment
-    implementation rootProject.ext.material
-
-    implementation rootProject.ext.coroutinesCore
-    implementation rootProject.ext.coroutinesAndroid
 
     implementation rootProject.ext.koinScope
     implementation rootProject.ext.koinAndroid
-    implementation rootProject.ext.koinViewModel
-
-    implementation rootProject.ext.cicerone
 }
