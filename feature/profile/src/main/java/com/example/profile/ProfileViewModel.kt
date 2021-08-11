@@ -1,6 +1,5 @@
 package com.example.profile
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,11 +25,9 @@ internal class ProfileViewModel(
     private fun observePhotos() = viewModelScope.launch {
         deps.photoSelections(initialUserProfile.id)
             .scan(initialUserProfile) { userProfile, newPhotoUrl ->
-                Log.d("ololo", "profileViewModel. scan")
                 userProfile.copy(photoUrl = newPhotoUrl)
             }
             .collect {
-                Log.d("ololo", "profileViewModel. collect")
                 _liveData.value = it
             }
     }

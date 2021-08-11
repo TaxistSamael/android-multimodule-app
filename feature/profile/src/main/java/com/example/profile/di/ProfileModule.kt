@@ -7,7 +7,7 @@ import org.koin.dsl.module
 import com.example.profile.ProfileViewModel
 
 val profileModule = module {
-    factory { ProfileApi() }
+    single { ProfileApi() }
     viewModel {  (initialProfile: UserProfile) ->
         ProfileViewModel(initialProfile, get())
     }

@@ -1,7 +1,6 @@
 package com.example.profile
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -32,7 +31,6 @@ internal class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         viewModel.liveData.observe(viewLifecycleOwner) { userProfile ->
             if (userProfile == null) return@observe
-            Log.d("ololo", "profileFragment. setPhoto")
             photoView.load(userProfile.photoUrl)
             nameView.text = userProfile.name
         }
