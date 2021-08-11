@@ -45,6 +45,9 @@ dependencies {
     implementation rootProject.ext.koinAndroid
     implementation rootProject.ext.koinViewModel
 
+    implementation rootProject.ext.cicerone
+
     implementation project(":feature:profile")
     implementation project(":feature:photo-picker")
+    implementation project(":core:android-utils")
 }
