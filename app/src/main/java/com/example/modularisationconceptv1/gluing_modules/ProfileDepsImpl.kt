@@ -1,4 +1,4 @@
-package com.example.modularisationconceptv1.deps
+package com.example.modularisationconceptv1.gluing_modules
 
 import com.example.photo_picker.api.PhotoPickerApi
 import com.example.profile.api.ProfileDeps
