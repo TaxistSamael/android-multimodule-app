@@ -11,18 +11,14 @@ import com.example.android_utils.withArgs
 import com.example.profile.model.UserProfile
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import coil.load
-import com.example.profile.api.ProfileDeps
-import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
-internal class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private val userProfile by args<UserProfile>()
     private val viewModel: ProfileViewModel by viewModel {
         parametersOf(userProfile)
     }
-    private val deps: ProfileDeps by inject()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val photoView = view.findViewById<ImageView>(R.id.profile_photo)
@@ -35,15 +31,7 @@ internal class ProfileFragment : Fragment(R.layout.fragment_profile) {
             nameView.text = userProfile.name
         }
 
-        changePhotoButton.setOnClickListener { openFragment() }
-    }
-
-    private fun openFragment() {
-        val fragment = deps.photoPickerFragment(userProfile.id)
-        parentFragmentManager
-            .beginTransaction()
-            .add(fragment, "PhotoPicker")
-            .commit()
+        changePhotoButton.setOnClickListener { viewModel.openPhotoPicker() }
     }
 
     companion object {

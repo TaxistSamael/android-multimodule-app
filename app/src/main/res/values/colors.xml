@@ -7,4 +7,57 @@
 	<color name="teal_700">#FF018786</color>
 	<color name="black">#FF000000</color>
 	<color name="white">#FFFFFFFF</color>
+
+	<color name="colorPrimaryLighter">#DfCAE4</color> <!--lighter lavendar-->
+	<color name="colorPrimaryLight">@color/lavender</color>
+	<color name="colorPrimary">@color/darkPurple</color> <!--dark lavendar-->
+	<!-- dark lavendar with half alpha-->
+	<color name="light_purple_bg_highlight">#F5EEF7</color>
+
+	<color name="colorSecondary">@color/darkBlue</color> <!-- dark gray blue-->
+	<color name="colorSecondaryHalfAlpha">#55364657</color> <!-- dark gray blue-->
+
+	<color name="colorTertiary">#5597E2</color> <!--darker blue-->
+	<color name="colorTertiaryLight">#95C0F1</color> <!--blue-->
+	<color name="colorTertiaryLighter">#F4F8FD</color>  <!--lighter blue-->
+	<!--lighter blue-->
+
+	<color name="colorWhite">#FFFFFF</color> <!--white-->
+	<color name="colorWhiteDisabled">#55FFFFFF</color> <!--white-->
+	<color name="colorWhiteAlpha80">#CCFFFFFF</color>
+	<color name="colorWhiteAlpha95">#F2FFFFFF</color>
+	<color name="colorWhite90">#E6FFFFFF</color>
+	<color name="colorLightGray">#EEEEEE</color> <!--light gray-->
+	<color name="colorLightGray50">#80EEEEEE</color> <!--light gray-->
+	<!--light gray-->
+	<color name="colorDarkerGray">#D1D1D1</color> <!--dark gray-->
+	<color name="colorDarkGray">#9B9B9B</color>
+	<color name="colorDarkGray30">#4D9B9B9B</color>
+
+	<color name="successGreen">#7BB739</color> <!--green-->
+	<color name="colorDanger">#DE6C6C</color> <!--red-->
+	<color name="colorDangerLight">#10DE6C6C</color> <!--red-->
+	<color name="colorWarning">#F8B259</color>
+	<color name="colorErrorRed">#1ADE6C6C</color> <!--red-->
+
+	<color name="almostBlack">#4A4A4A</color>
+	<color name="almostBlack50">#804A4A4A</color>
+	<color name="darkBlue">#364657</color>
+	<color name="darkBlue20">#33364657</color>
+	<color name="darkBlue90">#E6364657</color>
+	<color name="darkPurple">#A25EB5</color>
+	<color name="darkPurple10">#1AA25EB5</color>
+	<color name="cwcAdditionalItemPurple">#ECDFEF</color>
+	<color name="darkPurple20">#33A25EB5</color>
+	<color name="darkPurple30">#4DA25EB5</color>
+	<color name="darkPurple90">#E6A25EB5</color>
+	<color name="lavender">#BD8BCA</color>
+	<color name="lavender20">#33BD8BCA</color>
+	<color name="wispPink">#fceaea</color>
+
+	<color name="blue">#5597e2</color>
+	<color name="purple">#a05bb3</color>
+
+	<color name="extraLightBlue">#f4f8fd</color>
+	<color name="ashGray">#b4b4b4</color>
 </resources>

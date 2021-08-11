@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 internal class ProfileViewModel(
     private val initialUserProfile: UserProfile,
     private val deps: ProfileDeps,
+    private val router: ProfileRouter,
 ) : ViewModel() {
 
     private val _liveData = MutableLiveData<UserProfile>()
@@ -20,6 +21,10 @@ internal class ProfileViewModel(
 
     init {
         observePhotos()
+    }
+
+    fun openPhotoPicker() {
+        router.goToPhotoPickerFragment(initialUserProfile.id)
     }
 
     private fun observePhotos() = viewModelScope.launch {

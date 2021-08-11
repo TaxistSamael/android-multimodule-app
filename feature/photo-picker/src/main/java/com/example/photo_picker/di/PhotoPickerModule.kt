@@ -7,6 +7,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val photoPickerModule = module {
-    viewModel { (args: PhotoPickerArgs) -> PhotoPickerViewModel(args, get()) }
+    viewModel { (args: PhotoPickerArgs) -> PhotoPickerViewModel(args, get(), get()) }
     single { PhotoPickerApi() }
 }

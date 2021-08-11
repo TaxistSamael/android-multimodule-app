@@ -4,4 +4,5 @@
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:clipToPadding="false"
+	android:background="@color/design_default_color_background"
     android:padding="8dp" />

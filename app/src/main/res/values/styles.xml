@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="DoterraTheme" parent="Theme.AppCompat.Light">
+		<item name="android:windowContentTransitions">true</item>
+		<item name="colorPrimary">@color/colorPrimaryLight</item>
+		<item name="colorAccent">@color/colorSecondary</item>
+		<item name="colorPrimaryDark">@color/colorPrimary</item>
+		<item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowActivityTransitions">true</item>
+		<item name="android:windowExitTransition">@android:transition/no_transition</item>
+		<item name="android:windowEnterTransition">@android:transition/slide_right</item>
+		<item name="android:includeFontPadding">false</item>
+		<item name="android:windowBackground">@color/colorWhite</item>
+		<item name="android:actionBarStyle">@style/Toolbar</item>
+	</style>
+
+	<style name="SplashScreenTheme" parent="DoterraTheme">
+		<item name="android:windowBackground">@drawable/background_splash_screen</item>
+		<item name="android:windowEnterTransition">@transition/fade</item>
+	</style>
+
+	<!--region Toolbar -->
+	<style name="ToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+		<item name="android:padding">30dp</item>
+	</style>
+
+	<style name="Toolbar">
+		<item name="android:background">@android:color/transparent</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">@dimen/abc_action_bar_default_height_material</item>
+		<item name="layout_collapseMode">pin</item>
+	</style>
+</resources>

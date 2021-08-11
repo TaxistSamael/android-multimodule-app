@@ -10,15 +10,17 @@ import kotlinx.coroutines.launch
 
 internal class PhotoPickerViewModel(
     private val photoPickerArgs: PhotoPickerArgs,
-    private val photoPickerApi: PhotoPickerApi,
+    private val api: PhotoPickerApi,
+    private val router: PhotoPickerRouter,
 ): ViewModel() {
 
     fun onPhotoSelected(photo: Photo) = viewModelScope.launch {
-        photoPickerApi.postPhotoSelection(
+        api.postPhotoSelection(
             PhotoSelection(
                 selectionId = photoPickerArgs.selectionId,
                 photo = photo
             )
         )
+        router.exit()
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<item
+		android:width="480dp"
+		android:height="1038dp"
+		android:drawable="@drawable/splash_screen_image"
+		android:gravity="center" />
+
+	<item
+			android:drawable="@drawable/ic_logo_primary"
+			android:gravity="center"
+		/>
+</layer-list>

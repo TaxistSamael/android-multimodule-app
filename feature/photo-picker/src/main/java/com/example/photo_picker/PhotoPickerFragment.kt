@@ -11,15 +11,11 @@ import com.example.android_utils.withArgs
 import com.example.photo_picker.model.Photo
 import com.example.photo_picker.model.PhotoPickerArgs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import org.koin.androidx.scope.newScope
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.parameter.parametersOf
-import org.koin.core.scope.KoinScopeComponent
-import org.koin.core.scope.Scope
 
-internal class PhotoPickerFragment: BottomSheetDialogFragment(), KoinComponent {
+class PhotoPickerFragment: BottomSheetDialogFragment(), KoinComponent {
 
     private val photoPickerArgs by args<PhotoPickerArgs>()
     private val viewModel: PhotoPickerViewModel by viewModel {
@@ -35,7 +31,6 @@ internal class PhotoPickerFragment: BottomSheetDialogFragment(), KoinComponent {
         view.findViewById<RecyclerView>(R.id.photo_recycler_view).apply {
             val photoAdapter = PhotoAdapter { photo ->
                 viewModel.onPhotoSelected(photo)
-                dismiss()
             }
             adapter = photoAdapter
             layoutManager = GridLayoutManager(context, 3)

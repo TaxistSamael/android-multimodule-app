@@ -9,6 +9,6 @@ import com.example.profile.ProfileViewModel
 val profileModule = module {
     single { ProfileApi() }
     viewModel {  (initialProfile: UserProfile) ->
-        ProfileViewModel(initialProfile, get())
+        ProfileViewModel(initialProfile, get(), get())
     }
 }
