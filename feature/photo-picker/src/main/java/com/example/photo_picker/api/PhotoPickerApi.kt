@@ -6,22 +6,23 @@ import com.example.photo_picker.PhotoPickerFragment
 import com.example.photo_picker.model.Photo
 import com.example.photo_picker.model.PhotoPickerArgs
 import com.example.photo_picker.model.PhotoSelection
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class PhotoPickerApi {
 
-    val photoPickerFlow = MutableStateFlow(PhotoSelection(
-        selectionId = "1",
-        photo = Photo.presets[0]
-    ))
+    val photoPickerFlow = MutableSharedFlow<PhotoSelection>(
+        replay = 100,
+        extraBufferCapacity = 100,
+        onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
 
     fun photoPickerFragment(args: PhotoPickerArgs): Fragment =
         PhotoPickerFragment.newInstance(args)
 
     internal suspend fun postPhotoSelection(photoSelection: PhotoSelection) {
         Log.d("ololo", "PhotoPickerApi. emit")
-        photoPickerFlow.emit(photoSelection)
+        photoPickerFlow.tryEmit(photoSelection)
     }
 
 }
